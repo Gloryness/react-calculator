@@ -9,8 +9,8 @@ export default function Text({ number, index, setCalc, showRes }) {
             setValue(event.target.value)
 
             setCalc(old => {
-            old[index] = parseFloat(event.target.value)
-            return old
+                old[index] = parseFloat(event.target.value)
+                return old
             })
 
             showRes()
