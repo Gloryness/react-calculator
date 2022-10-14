@@ -5,14 +5,18 @@ export default function Text({ number, index, setCalc, showRes }) {
     const [value, setValue] = useState(number)
 
     function handleInput(event) {
-        setValue(event.target.value)
+        if (event.target.value !== "") {
+            setValue(event.target.value)
 
-        setCalc(old => {
-          old[index] = parseInt(event.target.value)
-          return old
-        })
+            setCalc(old => {
+            old[index] = parseInt(event.target.value)
+            return old
+            })
 
-        showRes()
+            showRes()
+        } else {
+            setValue(old => old)
+        }
       }
 
     return (

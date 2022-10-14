@@ -7,7 +7,7 @@ import './index.css'
 
 function App() {
   const [calculation, setCalculation] = useState([0, "+", 0])
-  const [result, setResult] = useState(0)
+  const [result, setResult] = useState("0")
   
   function addNewCalculation(operator, number) {
     setCalculation(old => [...old, operator])
@@ -15,7 +15,7 @@ function App() {
   }
 
   function showResult() {
-    setResult(eval(calculation.join("")))
+    setResult(eval(calculation.join("")).toLocaleString())
   }
 
   return (
@@ -26,7 +26,7 @@ function App() {
             if(['+', '-', '*', '/'].includes(calc)) {
               return <Operator text={calc} id={index} setCalc={setCalculation} showRes={showResult}/>
             } else {
-              return <Text value={calc} index={index} setCalc={setCalculation} showRes={showResult}/>
+              return <Text number={calc} index={index} setCalc={setCalculation} showRes={showResult}/>
             }
           })
         }
