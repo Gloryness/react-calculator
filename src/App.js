@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Button from '@mui/material/Button';
 import AddIcon from './components/AddIcon';
 import Text from './components/Text';
